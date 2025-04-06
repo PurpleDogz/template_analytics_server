@@ -52,13 +52,17 @@ build: ## Build the application distro folder
 	@npm run build
 
 .PHONY: build_image
-build_image: build ## Build the docker image
+build_image: ## Build the docker image
 	docker build --tag ${IMAGE_NAME_TAG} \
 				 --build-arg REVISION=${REVISION} \
 				 --build-arg DOCKER_REPO=${DEFAULT_DOCKER_REPO} .
 				#  --build-arg ARTIFACTORY_URL=${ARTIFACTORY_URL} \
 				#  --build-arg ARTIFACTORY_USERNAME=${ARTIFACTORY_USERNAME} \
 				#  --build-arg ARTIFACTORY_ACCESS_TOKEN=${ARTIFACTORY_ACCESS_TOKEN} .
+
+.PHONY: run_docker
+run_docker:
+	docker run -p 8080:80 analytics-app:latest
 
 .PHONY: publish
 publish:
