@@ -10,13 +10,15 @@
     "test": "mocha 'tests/unit/**/*.[tj]s'"
   },
   "dependencies": {
+    "@databricks/sql": "^1.10.0",
     "@observablehq/framework": "^1.13.2",
     "d3-dsv": "^3.0.1",
-    "d3-time-format": "^4.1.0"
+    "d3-time-format": "^4.1.0",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
-    "rimraf": "^5.0.5",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "rimraf": "^5.0.5"
   },
   "engines": {
     "node": ">=18"
